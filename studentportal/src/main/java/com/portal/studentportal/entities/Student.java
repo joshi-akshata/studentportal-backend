@@ -11,10 +11,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-//@Getter
-//@Setter
-//@AllArgsConstructor
-//@NoArgsConstructor
 @ToString
 @Entity
 public class Student {
