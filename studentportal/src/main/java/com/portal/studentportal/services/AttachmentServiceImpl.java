@@ -19,7 +19,7 @@ public class AttachmentServiceImpl implements AttachmentService{
 	public Attachment addAttachment(MultipartFile file) throws IOException
 	{
 		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-		Attachment attachment = new Attachment(fileName, file.getContentType());
+		Attachment attachment = new Attachment(fileName, file.getContentType(),file.getBytes());
 	    return attachmentRepository.save(attachment);
 	}
 

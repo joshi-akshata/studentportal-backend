@@ -68,10 +68,11 @@ public class Attachment {
 		this.activity = activity;
 	}
 
-	public Attachment(String name, String type) {
+	public Attachment(String name, String type,byte[] data) {
 		super();
 		this.name = name;
 		this.type = type;
+		this.data=data;
 	}
 	  
 	 
