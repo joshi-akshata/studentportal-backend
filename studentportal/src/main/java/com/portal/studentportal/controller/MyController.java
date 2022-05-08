@@ -5,6 +5,8 @@ import org.springframework.http.HttpHeaders;
 import java.io.IOException;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -64,7 +66,7 @@ public class MyController {
 	 
 
 	        @PostMapping("/student")
-	        public Student  addStudent(@RequestBody Student student)
+	        public Student  addStudent(@Valid @RequestBody Student student)
 	        {
 		      return studentService.addStudent(student);
 		        
@@ -73,7 +75,7 @@ public class MyController {
 	 
 	   
 	        @PutMapping("/student/{studentId}")
-	        public Student updateStudent(@PathVariable("studentId") int studentId, @RequestBody Student student)
+	        public Student updateStudent(@PathVariable("studentId") int studentId, @Valid @RequestBody Student student)
 	        {
 	            
 	            	return studentService.updateStudent(student, studentId);
@@ -161,7 +163,7 @@ public class MyController {
 	        }
 
 	        @GetMapping("/files/{id}")
-	        public ResponseEntity<byte[]> getFile(@PathVariable String id) {
+	        public ResponseEntity<byte[]> getFile(@PathVariable Integer id) {
 	          Attachment attachment = attachmentServiceImpl.getAttachment(id);
 	          return ResponseEntity.ok()
 	              .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + attachment.getName() + "\"")

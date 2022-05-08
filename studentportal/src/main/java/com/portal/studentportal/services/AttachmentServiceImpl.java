@@ -23,7 +23,7 @@ public class AttachmentServiceImpl implements AttachmentService{
 	    return attachmentRepository.save(attachment);
 	}
 
-	public Attachment getAttachment(String id)
+	public Attachment getAttachment(Integer id)
 	{
 		return attachmentRepository.findById(id).get();
 	}

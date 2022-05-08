@@ -10,6 +10,6 @@ public interface AttachmentService {
 	
 	Attachment addAttachment(MultipartFile file) throws IOException;
 	
-	Attachment getAttachment(String id);
+	Attachment getAttachment(Integer id);
 
 }
