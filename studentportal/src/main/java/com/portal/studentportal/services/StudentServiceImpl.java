@@ -50,12 +50,13 @@ public class StudentServiceImpl implements StudentService{
 	public Student updateStudent(Student student,int studentId)
 	{
 		Student s= studentRepository.findById(studentId).get();
-
+        s.setRollNo(student.getRollNo());
 		s.setFname(student.getFname());
 		s.setLname(student.getLname());
 		s.setEmail(student.getEmail());
 		s.setUsername(student.getUsername());
 		s.setPassword(student.getPassword());
+		s.setConfirmPassword(student.getConfirmPassword());
 				
 	    return studentRepository.save(s);
 	}
