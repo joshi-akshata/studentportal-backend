@@ -7,9 +7,9 @@ import org.springframework.web.multipart.MultipartFile;
 import com.portal.studentportal.entities.Attachment;
 
 public interface AttachmentService {
-	
+
 	Attachment addAttachment(MultipartFile file) throws IOException;
-	
+
 	Attachment getAttachment(Integer id);
 
 }

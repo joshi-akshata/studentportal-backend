@@ -6,39 +6,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @ToString
 @Entity
 public class Student {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String rollNo;
 	private String fname;
 
 	private String lname;
-	
+
 	private String Email;
-	
+
 	private String username;
 
 	private String password;
 	private String ConfirmPassword;
-	
+
 	@ManyToOne
-    @JoinColumn(name = "attId")
-    private Attachment attachment;
+	@JoinColumn(name = "attId")
+	private Attachment attachment;
 
 	public int getId() {
 		return id;
@@ -125,12 +117,9 @@ public class Student {
 		ConfirmPassword = confirmPassword;
 		this.attachment = attachment;
 	}
-	
-	
-	public Student()
-	{
-		
+
+	public Student() {
+
 	}
-	
-	
+
 }

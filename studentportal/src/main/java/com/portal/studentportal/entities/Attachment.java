@@ -10,23 +10,22 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Attachment {
-	
-	  @Id
-	  @GeneratedValue(strategy=GenerationType.AUTO)
-	  private Integer id;
-	  private String name;
-	  private String type;
-	  @Lob
-	  private byte[] data;
-	  
-	  @ManyToOne
-	  @JoinColumn(name = "activityId")
-	  private Activity activity;
-	  
-	  public Attachment()
-	  {
-		  
-	  }
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	private String name;
+	private String type;
+	@Lob
+	private byte[] data;
+
+	@ManyToOne
+	@JoinColumn(name = "activityId")
+	private Activity activity;
+
+	public Attachment() {
+
+	}
 
 	public Integer getId() {
 		return id;
@@ -68,12 +67,11 @@ public class Attachment {
 		this.activity = activity;
 	}
 
-	public Attachment(String name, String type,byte[] data) {
+	public Attachment(String name, String type, byte[] data) {
 		super();
 		this.name = name;
 		this.type = type;
-		this.data=data;
+		this.data = data;
 	}
-	  
-	 
+
 }
