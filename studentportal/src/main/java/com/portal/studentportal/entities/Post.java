@@ -38,9 +38,8 @@ public class Post {
 		this.id = id;
 		this.content = content;
 	}
-	
-	public Post()
-	{
-		
+
+	public Post() {
+
 	}
 }

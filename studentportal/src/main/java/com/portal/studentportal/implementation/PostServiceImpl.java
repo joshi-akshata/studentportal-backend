@@ -10,11 +10,11 @@ import com.portal.studentportal.repository.PostRepository;
 import com.portal.studentportal.services.PostService;
 
 @Service
-public class PostServiceImpl implements PostService{
-	
+public class PostServiceImpl implements PostService {
+
 	@Autowired
 	PostRepository postRepository;
-	
+
 	@Override
 	public List<Post> getAllPost() {
 		return postRepository.findAll();
@@ -26,7 +26,6 @@ public class PostServiceImpl implements PostService{
 		return postRepository.findById(postId).get();
 	}
 
-	
 	@Override
 	public Post addPost(Post post) {
 		return postRepository.save(post);

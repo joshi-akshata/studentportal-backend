@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.portal.studentportal.entities.Activity;
 
 @Repository
-public interface ActivityRepository extends JpaRepository<Activity, Integer>{
+public interface ActivityRepository extends JpaRepository<Activity, Integer> {
 
 }

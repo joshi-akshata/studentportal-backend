@@ -19,31 +19,31 @@ import com.portal.studentportal.services.PostService;
 @CrossOrigin("*")
 public class PostController {
 
-	 @Autowired
-	  private PostService postService;
+	@Autowired
+	private PostService postService;
 
-	  @GetMapping("/post")
-	  public List<Post> getAllPost() {
-	    return postService.getAllPost();
-	  }
+	@GetMapping("/post")
+	public List<Post> getAllPost() {
+		return postService.getAllPost();
+	}
 
-	  @GetMapping("/post/{postId}")
-	  public Post getPostById(@PathVariable Integer postId) {
-	    return postService.getPostById(postId);
-	  }
+	@GetMapping("/post/{postId}")
+	public Post getPostById(@PathVariable Integer postId) {
+		return postService.getPostById(postId);
+	}
 
-	  @PostMapping("/post")
-	  public Post addPost(@RequestBody Post post) {
-	    return postService.addPost(post);
-	  }
-	  
-	  @PutMapping("/post/{postId}")
-	  public Post updatePost(@PathVariable Integer postId, @RequestBody Post post) {
-	    return postService.updatePost(post, postId);
-	  }
+	@PostMapping("/post")
+	public Post addPost(@RequestBody Post post) {
+		return postService.addPost(post);
+	}
 
-	  @DeleteMapping("/post/{postId}")
-	  public void deletePost(@PathVariable Integer postId) {
-		  postService.deletePost(postId);
-	  }
+	@PutMapping("/post/{postId}")
+	public Post updatePost(@PathVariable Integer postId, @RequestBody Post post) {
+		return postService.updatePost(post, postId);
+	}
+
+	@DeleteMapping("/post/{postId}")
+	public void deletePost(@PathVariable Integer postId) {
+		postService.deletePost(postId);
+	}
 }
